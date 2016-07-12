@@ -9,8 +9,8 @@
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:background="@color/tw__solid_white"
         card_view:cardCornerRadius="4dp"
@@ -22,22 +22,41 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/card_number_layout"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Card Number"
-                android:textColorHint="#142030">
+                android:layout_height="wrap_content">
 
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/card_number_edittext"
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/card_number_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionDone"
-                    android:inputType="number"
-                    android:singleLine="true"
-                    android:textColor="#000" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/credit_card"
+                    android:hint="Card Number"
+                    android:textColorHint="#142030">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/card_number_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="#000" />
+                </android.support.design.widget.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/credit_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_credit_card_black" />
+
+            </RelativeLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -67,8 +86,8 @@
                     android:id="@+id/card_expriy_month_layout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:layout_weight="0.5"
+                    android:gravity="center"
                     android:hint="Month"
                     android:textColorHint="#142030">
 
@@ -94,9 +113,9 @@
                         android:id="@+id/card_expriy_year_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:imeOptions="actionDone"
                         android:layout_gravity="center"
                         android:gravity="center"
+                        android:imeOptions="actionDone"
                         android:inputType="number" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -106,22 +125,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_marginTop="16dp"
-                android:background="#30000000"
-                />
+                android:background="#30000000" />
 
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_weight="1"
-                    android:background="@color/dgts__default_accent"
-                    android:textColor="@color/tw__solid_white"
-                    android:textStyle="bold"
-                    android:textAllCaps="false"
-                    android:layout_marginTop="16dp"
-                    android:layout_height="wrap_content"
-                    android:text="Done"
-                    android:textSize="16sp"
-                    android:id="@+id/proceed" />
+            <Button
+                android:id="@+id/proceed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="@color/dgts__default_accent"
+                android:text="Done"
+                android:textAllCaps="false"
+                android:textColor="@color/tw__solid_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </android.support.v7.widget.CardView>

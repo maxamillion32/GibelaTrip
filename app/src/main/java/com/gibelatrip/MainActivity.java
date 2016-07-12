@@ -45,12 +45,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         locationServices = LocationServices.getLocationServices(MainActivity.this);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.request_trip);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 map = mapboxMap;
-                mapboxMap.setStyleUrl(Style.LIGHT);
+                mapboxMap.setStyleUrl("mapbox://styles/chle/ciqi5u47s002decnhrdy6gm7g");
                 setLocation(mapboxMap);
 
             }

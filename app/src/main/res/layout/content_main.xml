@@ -9,7 +9,14 @@
     tools:showIn="@layout/activity_main">
 
     <com.mapbox.mapboxsdk.maps.MapView
+        xmlns:mapbox="http://schemas.android.com/apk/res-auto"
         android:id="@+id/mapview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        mapbox:attribution_enabled="false"
+        mapbox:center_latitude="25.7479"
+        mapbox:center_longitude="28.2293"
+        mapbox:my_location_enabled="true"
+        mapbox:zoom="11"
+        />
 </RelativeLayout>
